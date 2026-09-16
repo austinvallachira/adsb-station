@@ -32,11 +32,11 @@ def read_cpu_temp():
     except Exception:
         return None
 
-print("Reading temperatures 3 times...")
+print("Reading temperatures 5 times...")
 print("-" * 45)
 
-# Loop exactly 3 times instead of running forever
-for i in range(3):
+# Loop exactly 5 times instead of running forever
+for i in range(5):
     sdr_temp = read_sdr_temp()
     cpu_temp = read_cpu_temp()
     
@@ -48,7 +48,7 @@ for i in range(3):
     print(f"RTL SDR: {sdr_str}   |   CPU: {cpu_str}")
     
     # Wait 2 seconds before checking again (skip waiting after the last read)
-    if i < 2:
+    if i < 4:
         time.sleep(2)
 
 print("-" * 45)
